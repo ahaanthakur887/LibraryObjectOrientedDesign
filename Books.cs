@@ -1,6 +1,6 @@
 ﻿namespace LibraryOOP
 {
-    public  class Books
+    public class Books
     {
         // Fields
         private bool Availability = true;
@@ -22,6 +22,11 @@
         public string BookInfo()
         {
             return $"Title is : {Title}, Author is {Author}, Publication date is {PublicationDate}.";
+        }
+
+        public bool CheckAvailability()
+        {
+            return Availability;
         }
     }
 }
