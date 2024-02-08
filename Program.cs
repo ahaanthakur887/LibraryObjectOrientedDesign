@@ -4,9 +4,44 @@
     {
         static void Main()
         {
-            Books book = new Books("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997);
-            Console.WriteLine(book.BookInfo());
-            Console.WriteLine(book.CheckAvailability());
+            // Inheritance example
+            Student student = new Student("Ahaan");
+            Console.WriteLine(student.GetDetails());
+            Professor professor = new Professor("Rufus", "mog");
+            Console.WriteLine(professor.GetDetails());
+
+            // Association example
+            List<Student> universityStudents = new List<Student>
+            {
+                new Student("Alice"),
+                new Student("Bob")
+            };
+
+            List<Professor> universityProfessors = new List<Professor>
+            {
+                new Professor("Dr. Smith", "Physics"),
+                new Professor("Dr. Johnson", "Chemistry")
+            };
+
+            University myUniversity = new University(universityStudents, universityProfessors);
+
+            // Aggregation Example
+            List<Professor> computerScienceProfessors = new List<Professor>
+            {
+                new Professor("Dr. Harris", "Computer Science"),
+                new Professor ("Dr. Brown", "Computer Science")
+            };
+
+            Department computerScienceDepartment = new Department(computerScienceProfessors);
+
+            // Composition Example
+            List<Student> programmingCourseStudents = new List<Student>
+            {
+                new Student("David"),
+                new Student("Ilias")
+            };
+
+            Course programmingCourse = new Course(programmingCourseStudents);
         }
     }
 }
